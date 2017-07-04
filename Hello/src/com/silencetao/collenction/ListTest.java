@@ -29,8 +29,8 @@ public class ListTest {
 		System.out.println(books.subList(1, 2));//切割字符串
 		books.sort((o1, o2) -> ((String)o1).length() - ((String)o2).length());//排序
 		System.out.println(books);
-//		books.replaceAll(ele -> ((String)ele).length());//按一定的规则替换集合元素
-//		System.out.println(books);
+		books.replaceAll(ele -> ((String)ele).length());//按一定的规则替换集合元素
+		System.out.println(books);
 		
 		System.out.println("--------------------");
 		//ListIterator
