@@ -1,11 +1,15 @@
 package com.silencetao.thread;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * 账户类
  * @author Silence
  *
  */
 public class Account {
+	//定义需要保证线程安全的方法
+	private final ReentrantLock lock = new ReentrantLock();
 	private String accountNo;
 	private double balance;
 	
@@ -54,5 +58,28 @@ public class Account {
 	@Override
 	public String toString() {
 		return "Account [accountNo=" + accountNo + ", balance=" + balance + "]";
+	}
+	
+	//提供一个线程安全的draw()方法来完成取钱操作
+	public /*synchronized*/ void draw(double drawAmount) {
+		//加锁
+		lock.lock();
+		try {
+			//账户余额大于取钱数目
+			if (balance >= drawAmount) {
+				System.out.println(Thread.currentThread().getName() + "取钱成功!吐出钞票:" + drawAmount);
+				try {
+					Thread.sleep(1);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				balance -= drawAmount;
+				System.out.println("\t余额为:" + balance);
+			} else {
+				System.out.println(Thread.currentThread().getName() + "余额不足!");
+			}
+		} finally {
+			lock.unlock();
+		}
 	}
 }
