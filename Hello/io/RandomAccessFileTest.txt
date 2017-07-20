@@ -2,16 +2,10 @@ package com.silencetao.io;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
+import Hello world!utStream;
 import java.io.RandomAccessFile;
 
-
-
-
-
-
-
-/**
+Hello world!**
  * 使用RandomAccessFile来访问指定的中间部分数据
  * @author Silence
  *
