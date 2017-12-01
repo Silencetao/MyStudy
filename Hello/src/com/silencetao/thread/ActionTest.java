@@ -11,7 +11,7 @@ public class ActionTest {
 		AccountPlus account = new AccountPlus("74832498", 0);
 		new DrawAccount("»°«Æ’ﬂ", account, 800).start();
 		new DepositThread("¥Ê«Æ’ﬂA", account, 800).start();
-		new DepositThread("¥Ê«Æ’ﬂB", account, 800).start();
-		new DepositThread("¥Ê«Æ’ﬂC", account, 800).start();
+//		new DepositThread("¥Ê«Æ’ﬂB", account, 800).start();
+//		new DepositThread("¥Ê«Æ’ﬂC", account, 800).start();
 	}
 }

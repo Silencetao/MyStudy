@@ -80,5 +80,17 @@ public class TreeSetTest02 {
 		t.add(9);
 		t.add(-3);
 		System.out.println(t);
+		
+		TreeSet tMs = new TreeSet((o1, o2) -> {
+		    M m1 = (M) o1;
+		    M m2 = (M) o2;
+		    return m1.age > m2.age ? 1 :
+		        m1.age < m2.age ? -1 : 0;
+		});
+		
+		tMs.add(new M(4));
+		tMs.add(new M(-2));
+		tMs.add(new M(0));
+		System.out.println(tMs);
 	}
 }

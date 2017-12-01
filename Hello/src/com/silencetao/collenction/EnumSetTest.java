@@ -1,6 +1,8 @@
 package com.silencetao.collenction;
 
+import java.util.Collection;
 import java.util.EnumSet;
+import java.util.HashSet;
 
 /**
  * EnumSet测试
@@ -9,7 +11,13 @@ import java.util.EnumSet;
  */
 
 enum Season {
-	SPRING, SUMMER, FALL, WINTER
+	SPRING("春天"), SUMMER("夏天"), FALL("秋天"), WINTER("冬天");
+	
+    private String name;
+    
+    private Season(String name) {
+        this.name = name;
+    }
 }
 
 public class EnumSetTest {
@@ -28,5 +36,12 @@ public class EnumSetTest {
 		System.out.println(es4);
 		EnumSet es5 = EnumSet.complementOf(es4);//创建集合es4补集的集合
 		System.out.println(es5);
+		
+		Collection c = new HashSet();
+		c.clear();
+		c.add(Season.FALL);
+		c.add(Season.SPRING);
+		EnumSet seasonSet = EnumSet.copyOf(c);
+		System.out.println(seasonSet);
 	}
 }

@@ -20,7 +20,7 @@ public class DrawThread extends Thread {
 	//当多个线程修改同一个共享数据时，将涉及数据安全问题
 	@Override
 	public void run() {
-		System.out.println("当前用户:" + getName() + "-->账户余额为:" + account.getBalance());
+//		System.out.println("当前用户:" + getName() + "-->账户余额为:" + account.getBalance());
 		//使用account作为同步监视器，任何线程进入下面同步代码块之前
 		//必须先获得对account账户的锁定，其他线程无法获得锁，也就无法修改它
 		//这种做法符合：“加锁->修改->释放锁”的逻辑

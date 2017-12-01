@@ -17,7 +17,7 @@ class T implements Comparable {
 	
 	@Override
 	public String toString() {
-		return "T[count:]" + count + "]";
+		return "T[count:" + count + "]";
 	}
 	
 	@Override

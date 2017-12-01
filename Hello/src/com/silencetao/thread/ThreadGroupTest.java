@@ -35,6 +35,6 @@ public class ThreadGroupTest {
 		System.out.println("tg线程组是否是后台线程组:" + tg.isDaemon());
 		MyThread tt = new MyThread(tg, "tg组的线程甲");
 		tt.start();
-		new MyThread(tg, "tg组的线程组乙");
+		new MyThread(tg, "tg组的线程组乙").start();
 	}
 }

@@ -21,15 +21,17 @@ public class CollectionTest {
 		//删除一个元素
 		c.remove(3);
 		System.out.println(c.size());//集合长度减1
+		System.out.println("c add:" + c.add("Silence"));
 		//判断集合里是否含有指定元素
-		System.out.println(c.contains("Silence"));
+        System.out.println("c contains:" + c.contains("Silence"));
 		c.add("今天天气真心不错");
 		System.out.println(c);
 		Collection books = new HashSet();
 		books.add("Java从入门到放弃");
 		books.add("Java从入门到如何治疗颈椎病");
+		System.out.println("books add:" + books.add("Java从入门到放弃"));
 		//判断集合c是否包含集合books集合的所有元素
-		System.out.println(c.containsAll(books));
+		System.out.println("books containsAll c:" + c.containsAll(books));
 		//用集合c减去集合books的元素
 		c.removeAll(books);
 		System.out.println(c);

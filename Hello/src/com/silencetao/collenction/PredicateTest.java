@@ -18,8 +18,10 @@ public class PredicateTest {
 		books.add(new String("疯狂IOS讲义"));
 		books.add(new String("疯狂Ajax讲义"));
 		books.add(new String("疯狂Android讲义"));
+		//使用removeIf(Predicate filter)方法删除符合filter条件的元素
+        books.removeIf(ele -> ((String)ele).length() < 10);
+        //利用谓词Predicate统计符合条件的元素个数
 		System.out.println(callAll(books, ele -> ((String)ele).length() < 10));
-		books.removeIf(ele -> ((String)ele).length() < 10);
 		System.out.println(books);
 	}
 	

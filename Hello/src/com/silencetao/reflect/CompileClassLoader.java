@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
@@ -77,6 +78,8 @@ public class CompileClassLoader extends ClassLoader {
         
         File javaFile = new File(javaFilename);
         File classFile = new File(classFilename);
+        System.out.println(javaFile.lastModified());
+        System.out.println(classFile.lastModified());
         
         /*
          * 当指定的Java源文件存在，且Class文件不存在，或者Java源文件的修改
@@ -126,10 +129,10 @@ public class CompileClassLoader extends ClassLoader {
         /*
          * 如果运行该程序没有参数，即没有目标类
          */
-        if (args.length < 1) {
+        /*if (args.length < 1) {
             System.out.println("缺少目标类，请按如下格式运行Java源文件");
             System.out.println("java ComileClassLoader ClassName");
-        }
+        }*/
         
         //第一个参数是需要运行的类
         String progClass = "com.silencetao.reflect.Hello";
@@ -144,6 +147,7 @@ public class CompileClassLoader extends ClassLoader {
         CompileClassLoader ccl = new CompileClassLoader();
         //加载需要的类
         Class<?> clazz = ccl.loadClass(progClass);
+
         //获取需要运行的类的主方法
         Method main = clazz.getMethod("main", (new String[0]).getClass());
         Object argsArray[] = {progArags};

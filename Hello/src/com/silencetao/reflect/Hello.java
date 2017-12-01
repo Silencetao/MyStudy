@@ -7,6 +7,7 @@ package com.silencetao.reflect;
  * @version 1.0.1
  */
 public class Hello {
+    int age;
 
     public static void main(String[] args) {
         for (String arg : args) {
